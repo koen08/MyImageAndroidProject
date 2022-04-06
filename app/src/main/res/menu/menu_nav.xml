@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_tape"
+        android:icon="@drawable/ic_baseline_image_search_24"
+        android:title="@string/tape" />
+
+    <item
+        android:id="@+id/menu_edit"
+        android:icon="@drawable/ic_baseline_edit_24"
+        android:title="@string/design" />
+
+    <item
+        android:id="@+id/menu_profile"
+        android:icon="@drawable/ic_baseline_account_box_24"
+        android:title="@string/profile" />
+</menu>

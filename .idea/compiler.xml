@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel target="1.7">
+      <module name="MyImageAndroidProject.app" target="11" />
+      <module name="MyImageAndroidProject.data.local" target="11" />
+      <module name="MyImageAndroidProject.local" target="11" />
+      <module name="MyImageAndroidProject.presentation" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
