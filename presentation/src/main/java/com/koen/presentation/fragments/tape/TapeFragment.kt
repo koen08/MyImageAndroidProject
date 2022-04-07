@@ -6,22 +6,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.koen.presentation.R
+import com.koen.presentation.databinding.FragmentTapeBinding
 import com.koen.presentation.fragments.core.BaseFragment
 import com.koen.presentation.fragments.design.DesignFragment
 import dagger.android.support.DaggerFragment
 import javax.inject.Inject
 
-class TapeFragment @Inject constructor(): BaseFragment(TapeFragment::class) {
+class TapeFragment @Inject constructor() : BaseFragment<FragmentTapeBinding>() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+    override fun viewBinding(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): FragmentTapeBinding = FragmentTapeBinding.inflate(inflater, container, false)
 
-        return inflater.inflate(R.layout.fragment_tape, container, false)
-    }
 }

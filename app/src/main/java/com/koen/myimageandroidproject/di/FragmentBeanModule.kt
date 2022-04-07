@@ -2,7 +2,6 @@ package com.koen.myimageandroidproject.di
 
 import androidx.fragment.app.Fragment
 import com.koen.myimageandroidproject.di.annotation.FragmentKey
-import com.koen.myimageandroidproject.ui.CustomFragmentFactory
 import com.koen.presentation.fragments.design.DesignFragment
 import com.koen.presentation.fragments.profile.ProfileFragment
 import com.koen.presentation.fragments.tape.TapeFragment

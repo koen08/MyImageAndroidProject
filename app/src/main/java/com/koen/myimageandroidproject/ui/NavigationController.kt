@@ -14,7 +14,6 @@ class NavigationController @Inject constructor(
         val fragment = customFragmentFactory.create(fragmentClass)
         fragmentManager.beginTransaction()
             .replace(R.id.fragment_container, fragment)
-            .addToBackStack(null)
             .commit()
     }
 }

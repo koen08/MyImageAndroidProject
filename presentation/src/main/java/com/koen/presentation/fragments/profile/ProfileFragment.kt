@@ -6,23 +6,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.koen.presentation.R
+import com.koen.presentation.databinding.FragmentProfileBinding
 import com.koen.presentation.fragments.core.BaseFragment
 import com.koen.presentation.fragments.design.DesignFragment
 import dagger.android.support.DaggerFragment
 import javax.inject.Inject
 
-class ProfileFragment @Inject constructor(): BaseFragment(ProfileFragment::class) {
+class ProfileFragment @Inject constructor(): BaseFragment<FragmentProfileBinding>() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+    override fun viewBinding(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-
-        return inflater.inflate(R.layout.fragment_profile, container, false)
-    }
+    ): FragmentProfileBinding = FragmentProfileBinding.inflate(inflater, container, false)
 
 }

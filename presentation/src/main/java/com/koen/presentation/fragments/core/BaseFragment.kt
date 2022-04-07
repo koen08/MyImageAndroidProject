@@ -7,27 +7,27 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.viewbinding.ViewBinding
 import com.koen.presentation.fragments.design.DesignFragment
 import dagger.android.support.DaggerFragment
 import kotlin.reflect.KClass
 
-abstract class BaseFragment(val clazz: KClass<out Fragment>) : DaggerFragment() {
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        Log.i("FRAGMENT", "${clazz.simpleName} - onAttach()")
-    }
+abstract class BaseFragment<V : ViewBinding>() : DaggerFragment() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        Log.i("FRAGMENT", "${clazz.simpleName} - onCreate()")
-    }
+    protected lateinit var viewBindingData: V
+
+    abstract fun viewBinding(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): V
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        Log.i("FRAGMENT", "${clazz.simpleName} - onCreateView()")
-        return super.onCreateView(inflater, container, savedInstanceState)
+        viewBindingData = viewBinding(inflater, container, savedInstanceState)
+        return viewBindingData.root
     }
 }
