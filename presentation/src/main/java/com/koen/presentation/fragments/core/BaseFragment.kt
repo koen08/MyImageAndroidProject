@@ -14,7 +14,7 @@ import kotlin.reflect.KClass
 
 abstract class BaseFragment<V : ViewBinding>() : DaggerFragment() {
 
-    protected lateinit var viewBindingData: V
+    protected var viewBindingData: V? = null
 
     abstract fun viewBinding(
         inflater: LayoutInflater,
@@ -28,6 +28,12 @@ abstract class BaseFragment<V : ViewBinding>() : DaggerFragment() {
         savedInstanceState: Bundle?
     ): View? {
         viewBindingData = viewBinding(inflater, container, savedInstanceState)
-        return viewBindingData.root
+        return viewBindingData?.root
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        viewBindingData = null
+        Log.i("FRAGMENT", "onDestroy()")
     }
 }
